@@ -21,4 +21,10 @@ public class RenderFacade {
         return "Hello, " + name;
     }
 
+    @GET
+    @Path("/reg/{name: [a-zA-Z][a-zA-Z_0-9]*}")
+    public String randomGreeting(@PathParam("name") String name) {
+        return "Greeting via regular expression endpoint.";
+    }
+
 }
