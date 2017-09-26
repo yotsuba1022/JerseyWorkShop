@@ -1,8 +1,9 @@
 package idv.carl.jersey;
 
-import javax.ws.rs.ApplicationPath;
-
+import idv.carl.jersey.binder.ApplicationBinder;
 import org.glassfish.jersey.server.ResourceConfig;
+
+import javax.ws.rs.ApplicationPath;
 
 /**
  * @author Carl Lu
@@ -11,6 +12,7 @@ import org.glassfish.jersey.server.ResourceConfig;
 public class Application extends ResourceConfig {
 
     public Application() {
+        register(new ApplicationBinder());
         packages("idv.carl.jersey");
     }
 
