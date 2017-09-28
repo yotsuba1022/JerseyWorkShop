@@ -1,6 +1,6 @@
 package idv.carl.jersey;
 
-import idv.carl.jersey.binder.ApplicationBinder;
+import idv.carl.jersey.binder.ApplicationComponentBinder;
 import org.glassfish.jersey.server.ResourceConfig;
 
 import javax.ws.rs.ApplicationPath;
@@ -12,8 +12,8 @@ import javax.ws.rs.ApplicationPath;
 public class Application extends ResourceConfig {
 
     public Application() {
-        register(new ApplicationBinder());
-        packages("idv.carl.jersey");
+        register(new ApplicationComponentBinder());
+        packages(this.getClass().getPackage().getName());
     }
 
 }
